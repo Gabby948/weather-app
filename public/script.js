@@ -1,6 +1,6 @@
-document.getElementById('weatherForm').addEventListener('submit',fuction(event){
+document.getElementById('weatherForm').addEventListener('submit',function(event){
     event.preventDefault();
-    const city = documente.getElementById('cityInput').value;
+    const city = document.getElementById('cityInput').value;
 
     fetch('/getWeather',{
         method: 'POST',
@@ -12,7 +12,7 @@ document.getElementById('weatherForm').addEventListener('submit',fuction(event){
     .then(response => response.json())
     .then(data => {
         if(data.cod == '404'){
-            document.getElementById(weatherResult).innerHTML = `<p>City not found</p>`;
+            document.getElementById('weatherResult').innerHTML = `<p>City not found</p>`;
        }else{
           const weatherDescription = data.weather[0].description;
           const temperature = data.main.temp;

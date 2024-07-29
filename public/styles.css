@@ -1,3 +1,14 @@
+/* Variables CSS */
+:root {
+    --primary-color: #007bff;
+    --primary-hover-color: #0056b3;
+    --background-color: #f0f2f5;
+    --container-background-color: #7692af;
+    --text-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +17,8 @@
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
+    background: var(--background-color);
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,13 +28,21 @@ body {
 
 /* Container Styles */
 .container {
-    background: #7692af;
+    background: var(--container-background-color);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    padding: 40px 60px;
-    max-width: 500px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    padding: 60px 80px; /* Increased padding for a larger container */
+    max-width: 800px;   /* Increased max-width for a larger container */
     width: 100%;
     text-align: center;
+}
+
+/* Title Styles */
+.title {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: var(--primary-color);
+    font-weight: 500;
 }
 
 /* Form Styles */
@@ -42,13 +61,13 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-    border-color: #007bff;
+    border-color: var(--primary-color);
     outline: none;
 }
 
 button {
     padding: 12px 20px;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 8px;
@@ -58,7 +77,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-hover-color);
 }
 
 /* Weather Result Styles */
@@ -69,7 +88,7 @@ button:hover {
 #weatherResult h2 {
     margin-bottom: 10px;
     font-size: 24px;
-    color: #007bff;
+    color: var(--primary-color);
 }
 
 #weatherResult p {
@@ -78,5 +97,5 @@ button:hover {
 }
 
 #weatherResult strong {
-    color: #333;
+    color: var(--text-color);
 }
